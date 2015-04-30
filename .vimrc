@@ -9,6 +9,7 @@ Plugin 'Chiel92/vim-autoformat'
 let g:formatprg_args_c = ""
 let g:formatprg_perl = "perltidy"
 noremap <F2> :Autoformat<CR>
+
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'kien/ctrlp.vim'
@@ -37,6 +38,7 @@ Plugin 'tpope/vim-repeat.git'
 Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets.git'
 Plugin 'tpope/vim-surround.git'
+
 Plugin 'sukima/xmledit.git'
 let g:xmledit_enable_html=1
 
