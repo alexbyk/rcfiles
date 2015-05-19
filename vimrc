@@ -6,6 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " -------- plugins
 Plugin 'Chiel92/vim-autoformat'
+let g:formatprg_c = "clang-format-3.6"
 let g:formatprg_args_c = ""
 let g:formatprg_perl = "perltidy"
 noremap <F2> :Autoformat<CR>
@@ -51,6 +52,8 @@ autocmd FileType html vnoremap <buffer> <F2> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <F2> :call RangeCSSBeautify()<cr>
 
 Plugin 'Valloric/YouCompleteMe'
+" for syntastic
+let g:ycm_show_diagnostics_ui = 0
 " -------- /plugins
 
 call vundle#end()            " required
