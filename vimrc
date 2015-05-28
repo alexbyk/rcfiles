@@ -21,6 +21,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_mode_map = { "mode": "active",  "active_filetypes": [],  "passive_filetypes": ["html"] }
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_c_check_header = 1
+let g:syntastic_cpp_check_header = 1
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
@@ -82,7 +84,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "=======================================   RUN AND TEST
-au Filetype c map <F7> :wa<CR>:!cc -std=c99 % && ./a.out<CR>
+au Filetype c map <F7> :wa<CR>:make && ./a.out<CR>
 au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!node %; read <CR>:SyntasticToggleMode<CR>
 au Filetype coffee map <F7> :SyntasticToggleMode<CR>:wa<CR>:!coffee %; read<CR>:SyntasticToggleMode<CR>
 au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
