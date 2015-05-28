@@ -60,9 +60,10 @@ let g:ycm_show_diagnostics_ui = 0
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
 " ------------- /VUNDLE
 
+" (.h)eaders are C, not C++
+au BufRead,BufNewFile   *.h set filetype=c
 
 ""for %<tag>
 "filetype detect
