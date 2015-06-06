@@ -23,6 +23,7 @@ let g:syntastic_mode_map = { "mode": "active",  "active_filetypes": [],  "passiv
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_c_check_header = 1
 let g:syntastic_cpp_check_header = 1
+let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.20.2/lib/5.20.2/x86_64-linux/CORE"
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
