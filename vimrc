@@ -23,6 +23,7 @@ let g:syntastic_mode_map = { "mode": "active",  "active_filetypes": [],  "passiv
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_c_check_header = 1
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_c_compiler_options = '-std=gnu11 -Wall -Wextra -pedantic'
 let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.20.2/lib/5.20.2/x86_64-linux/CORE"
 nmap <F3> :SyntasticCheck<CR>
 
@@ -86,7 +87,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "=======================================   RUN AND TEST
-au Filetype c map <F7> :wa<CR>:make && ./a.out<CR>
+au Filetype c map <F7> :wa<CR>:!make && ./run.link<CR>
 au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!node %; read <CR>:SyntasticToggleMode<CR>
 au Filetype coffee map <F7> :SyntasticToggleMode<CR>:wa<CR>:!coffee %; read<CR>:SyntasticToggleMode<CR>
 au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
