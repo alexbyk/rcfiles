@@ -28,6 +28,8 @@ let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.20.2/lib/5.20.2/x86_64-linux/
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
 Plugin 'mattn/emmet-vim.git'
 
 Plugin 'scrooloose/nerdtree.git'
