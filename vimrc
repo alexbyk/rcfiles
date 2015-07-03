@@ -6,9 +6,10 @@ Plugin 'gmarik/Vundle.vim'
 
 " -------- plugins
 Plugin 'Chiel92/vim-autoformat'
-let g:formatprg_c = "clang-format-3.6"
-let g:formatprg_args_c = ""
-let g:formatprg_perl = "perltidy"
+let g:formatdef_my_clang_format = '"clang-format-3.6"'
+let g:formatters_c = ['my_clang_format']
+let g:formatdef_perltidy = '"perltidy"'
+let g:formatters_perl = ['perltidy']
 noremap <F2> :Autoformat<CR>
 
 Plugin 'kchmck/vim-coffee-script'
