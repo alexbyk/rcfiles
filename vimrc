@@ -5,6 +5,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " -------- plugins
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
+" npm install -g js-beautify for js
 Plugin 'Chiel92/vim-autoformat'
 let g:formatdef_my_clang_format = '"clang-format-3.6"'
 let g:formatters_c = ['my_clang_format']
@@ -17,6 +21,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 nnoremap <F5> :CtrlPBuffer<CR>
 
+"color theme
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'scrooloose/syntastic'
@@ -26,6 +31,7 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_c_compiler_options = '-std=gnu11 -Wall -Wextra -pedantic'
 let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.20.2/lib/5.20.2/x86_64-linux/CORE"
+let g:syntastic_javascript_checkers = ['eslint']
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
@@ -49,14 +55,6 @@ Plugin 'tpope/vim-surround.git'
 
 Plugin 'sukima/xmledit.git'
 let g:xmledit_enable_html=1
-
-Plugin 'maksimr/vim-jsbeautify'
-autocmd FileType javascript noremap <buffer> <F2> :call JsBeautify()<cr>
-autocmd FileType html noremap <buffer> <F2> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <F2> :call CSSBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer>  <F2> :call RangeJsBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <F2> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <F2> :call RangeCSSBeautify()<cr>
 
 Plugin 'Valloric/YouCompleteMe'
 " for syntastic
