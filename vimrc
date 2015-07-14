@@ -12,6 +12,10 @@ let g:jsx_ext_required = 0
 Plugin 'Chiel92/vim-autoformat'
 let g:formatdef_my_clang_format = '"clang-format-3.6"'
 let g:formatters_c = ['my_clang_format']
+
+let g:formatdef_my_jsx = '"js-beautify -X -f - -".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")'
+let g:formatters_javascript_jsx = ['my_jsx']
+
 let g:formatdef_perltidy = '"perltidy"'
 let g:formatters_perl = ['perltidy']
 noremap <F2> :Autoformat<CR>

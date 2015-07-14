@@ -3,7 +3,6 @@
     "constructor-super": 2,
     "no-var": 2,
     "no-this-before-super": 2,
-    "prefer-const": 2,
     "prefer-const": 2
 
   },
@@ -21,7 +20,5 @@
   "ecmaFeatures": {
     "jsx": true
   },
-  "plugins": [
-    "react"
-  ]
+  "plugins": ["react"]
 }
