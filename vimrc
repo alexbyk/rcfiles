@@ -106,15 +106,6 @@ nnoremap <F10> :wa<CR>:!prove -rl t/<CR>
 command -range=% -nargs=* Tidy <line1>,<line2>!perltidy
 au Filetype perl vmap <F2> :Tidy<CR>
 
-""autoformat for c and perl instead of this
-""run :Tidy on entire buffer and return cursor to (approximate) original position"
-"fun DoTidy()
-"    let Pos = line2byte( line( "." ) ) 
-"    :Tidy
-"    exe "goto " . Pos 
-"endfun
-"au Filetype perl nmap <F2> :call DoTidy()<CR>
-
 " ====== /Perltidy
 
 " perlcritic
