@@ -36,6 +36,7 @@
   "globals": {
     "angular": true,
     "React": true,
+    "jest": true,
   },
   "ecmaFeatures": {
     "jsx": true
