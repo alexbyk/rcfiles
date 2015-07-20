@@ -93,7 +93,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "=======================================   RUN AND TEST
 au Filetype c map <F7> :wa<CR>:!make<CR>
-au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!node %; read <CR>:SyntasticToggleMode<CR>
+au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
 au Filetype coffee map <F7> :SyntasticToggleMode<CR>:wa<CR>:!coffee %; read<CR>:SyntasticToggleMode<CR>
 au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
 
