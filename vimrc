@@ -53,12 +53,15 @@ Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-repeat.git'
-Plugin 'garbas/vim-snipmate.git'
-Plugin 'honza/vim-snippets.git'
+
 Plugin 'tpope/vim-surround.git'
 
 Plugin 'sukima/xmledit.git'
 let g:xmledit_enable_html=1
+
+Plugin 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
+Plugin 'honza/vim-snippets.git'
 
 Plugin 'Valloric/YouCompleteMe'
 " for syntastic
