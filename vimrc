@@ -62,6 +62,7 @@ let g:xmledit_enable_html=1
 Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
 Plugin 'honza/vim-snippets.git'
+Plugin 'alexbyk/vim-ultisnips-mocha'
 
 Plugin 'Valloric/YouCompleteMe'
 " for syntastic
