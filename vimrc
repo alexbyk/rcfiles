@@ -1,3 +1,4 @@
+set backupcopy=yes " for webpack to reload without pain
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -63,6 +64,7 @@ Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
 Plugin 'honza/vim-snippets.git'
 Plugin 'alexbyk/vim-ultisnips-mocha'
+Plugin 'alexbyk/vim-ultisnips-react'
 
 Plugin 'Valloric/YouCompleteMe'
 " for syntastic
