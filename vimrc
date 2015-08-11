@@ -1,5 +1,5 @@
-set backupcopy=yes " for webpack to reload without pain
 set nocompatible              " be iMproved, required
+set backupcopy=yes            " for webpack to reload without pain
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -40,7 +40,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 Plugin 'mattn/emmet-vim.git'
 
@@ -99,7 +98,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "=======================================   RUN AND TEST
 au Filetype c map <F7> :wa<CR>:!make<CR>
-au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
+"au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
 au Filetype coffee map <F7> :SyntasticToggleMode<CR>:wa<CR>:!coffee %; read<CR>:SyntasticToggleMode<CR>
 au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
 
