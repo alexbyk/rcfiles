@@ -7,7 +7,6 @@
     "constructor-super": 2,
     "no-var": 2,
     "no-this-before-super": 2,
-    "prefer-const": 2,
 
     "react/sort-comp": 0,
     "react/jsx-sort-prop-types": 0,
