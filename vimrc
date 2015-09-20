@@ -52,6 +52,8 @@ map <C-l> :TlistToggle<CR>
 Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
 Plugin 'tpope/vim-fugitive.git'
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 Plugin 'tpope/vim-repeat.git'
 
 Plugin 'tpope/vim-surround.git'
