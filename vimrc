@@ -79,9 +79,8 @@ filetype plugin indent on    " required
 " (.h)eaders are C, not C++
 au BufRead,BufNewFile   *.h set filetype=c
 
-""for %<tag>
-"filetype detect
-"run macros/matchit.vim
+" for gf
+set path+=$PWD/**,
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
