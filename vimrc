@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " -------- plugins
+Plugin 'vim-perl/vim-perl'
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
