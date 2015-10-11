@@ -12,7 +12,7 @@ let g:jsx_ext_required = 0
 
 " npm install -g js-beautify for js
 Plugin 'Chiel92/vim-autoformat'
-let g:formatdef_my_clang_format = '"clang-format-3.6"'
+let g:formatdef_my_clang_format = '"clang-format"'
 let g:formatters_c = ['my_clang_format']
 
 let g:formatdef_my_jsx = '"js-beautify -X -f - -".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")'
