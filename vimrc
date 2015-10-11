@@ -36,7 +36,10 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_c_check_header = 1
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_c_compiler_options = '-std=gnu11 -Wall -Wextra -pedantic'
-let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.20.2/lib/5.20.2/x86_64-linux/CORE"
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
+let g:syntastic_cpp_compiler = 'clang++'
+let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.22.0/lib/5.22.0/x86_64-linux/CORE"
 let g:syntastic_javascript_checkers = ['eslint']
 nmap <F3> :SyntasticCheck<CR>
 
