@@ -7,6 +7,7 @@
     "constructor-super": 2,
     "no-var": 2,
     "no-this-before-super": 2,
+    "jsx-quotes": 1,
 
     "react/sort-comp": 0,
     "react/jsx-sort-prop-types": 0,
@@ -15,7 +16,6 @@
 
     "react/jsx-boolean-value": 1,
     "react/jsx-no-undef": 1,
-    "react/jsx-quotes": 1,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/no-danger": 1,
