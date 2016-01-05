@@ -15,8 +15,9 @@ let g:typescript_indent_disable = 1
 
 " npm install -g js-beautify for js
 Plugin 'Chiel92/vim-autoformat'
-let g:formatdef_my_clang_format = '"clang-format"'
+let g:formatdef_my_clang_format = '"clang-format-3.6"'
 let g:formatters_c = ['my_clang_format']
+let g:formatters_java = ['my_clang_format']
 let g:formatters_cpp = ['my_clang_format']
 
 "let g:formatdef_my_jsx = '"js-beautify -X -f - -".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")'
@@ -110,6 +111,7 @@ au Filetype c map <F7> :wa<CR>:!make<CR>
 au Filetype cpp map <F7> :wa<CR>:!make<CR>
 "au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
 au Filetype typescript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --out .out.ts.js % && node .out.ts.js; read <CR>:SyntasticToggleMode<CR>
+au Filetype java map <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r; read <CR>:SyntasticToggleMode<CR>
 au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
 
 au Filetype perl map <F9> :SyntasticToggleMode<CR>:wa<CR>:!prove -I ../common/lib -I local/lib/perl5 -rlv %<CR>:!read<CR>:SyntasticToggleMode<CR>
