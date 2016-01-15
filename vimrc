@@ -75,6 +75,7 @@ let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
 Plugin 'honza/vim-snippets.git'
 Plugin 'alexbyk/vim-ultisnips-mocha'
 Plugin 'alexbyk/vim-ultisnips-react'
+Plugin 'alexbyk/vim-ultisnips-perl'
 
 Plugin 'Valloric/YouCompleteMe'
 " for syntastic
@@ -87,6 +88,8 @@ filetype plugin indent on    " required
 
 " (.h)eaders are C, not C++
 au BufRead,BufNewFile   *.h set filetype=c
+au BufRead,BufNewFile   *.t set filetype=perl
+
 
 " for gf
 set path+=$PWD/**,
