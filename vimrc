@@ -113,7 +113,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 au Filetype c map <F7> :wa<CR>:!make<CR>
 au Filetype cpp map <F7> :wa<CR>:!make<CR>
 "au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
-au Filetype typescript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --out .out.ts.js % && node .out.ts.js; read <CR>:SyntasticToggleMode<CR>
+au Filetype typescript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --module commonjs % && node %:r; read <CR>:SyntasticToggleMode<CR>
 au Filetype java map <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r; read <CR>:SyntasticToggleMode<CR>
 au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
 
