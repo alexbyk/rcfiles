@@ -46,6 +46,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
 let g:syntastic_cpp_compiler = 'clang++'
 let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.22.0/lib/5.22.0/x86_64-linux/CORE"
 "let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_tsc_args = '--emitDecoratorMetadata --experimentalDecorators --target=es5 --module=commonjs'
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
