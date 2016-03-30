@@ -29,8 +29,6 @@ let g:formatdef_perltidy = '"perltidy"'
 let g:formatters_perl = ['perltidy']
 noremap <F2> :Autoformat<CR>
 
-Plugin 'kchmck/vim-coffee-script'
-
 Plugin 'kien/ctrlp.vim'
 nnoremap <F5> :CtrlPBuffer<CR>
 
