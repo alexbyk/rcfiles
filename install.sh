@@ -10,7 +10,7 @@ cpanm Perl::Tidy Perl::Critic Dist::Zilla
 echo "##############"
 echo "install npm modules"
 echo "##############"
-npm -g install gulp js-beautify babel eslint babel-eslint eslint-plugin-react typescript tslint typescript-formatter
+npm -g install gulp js-beautify babel eslint babel-eslint eslint-plugin-react typescript tslint typescript-formatter npm-check-updates typings
 
 echo "##############"
 echo "creating symbolic links in home directory"

@@ -6,6 +6,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " -------- plugins
+Plugin 'fatih/vim-go'
+
 Plugin 'vim-perl/vim-perl'
 Plugin 'leafgarland/typescript-vim'
 let g:typescript_indent_disable = 1
@@ -47,6 +49,8 @@ let g:syntastic_cpp_compiler = 'clang++'
 let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.22.0/lib/5.22.0/x86_64-linux/CORE"
 "let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_tsc_args = '--emitDecoratorMetadata --experimentalDecorators --target=es5 --module=commonjs'
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
@@ -74,7 +78,7 @@ let g:xmledit_enable_html=1
 Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
 Plugin 'honza/vim-snippets.git'
-Plugin 'alexbyk/vim-ultisnips-mocha'
+Plugin 'alexbyk/vim-ultisnips-js-testing'
 Plugin 'alexbyk/vim-ultisnips-react'
 Plugin 'alexbyk/vim-ultisnips-perl'
 
@@ -111,15 +115,16 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 "=======================================   RUN AND TEST
-au Filetype c map <F7> :wa<CR>:!make<CR>
-au Filetype cpp map <F7> :wa<CR>:!make<CR>
-"au Filetype javascript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
-au Filetype typescript map <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --module commonjs % && node %:r; read <CR>:SyntasticToggleMode<CR>
-au Filetype java map <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r; read <CR>:SyntasticToggleMode<CR>
-au Filetype perl map <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
+au Filetype c nmap <F7> :wa<CR>:!make<CR>
+au FileType go nmap <F7> <Plug>(go-run)
+au Filetype cpp nmap <F7> :wa<CR>:!make<CR>
+au Filetype javascript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!babel-node %; read <CR>:SyntasticToggleMode<CR>
+au Filetype typescript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --module commonjs --target ES6 --experimentalDecorators --emitDecoratorMetadata % && node --harmony %:r; read <CR>:SyntasticToggleMode<CR>
+au Filetype java nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r; read <CR>:SyntasticToggleMode<CR>
+au Filetype perl nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %; read<CR>:SyntasticToggleMode<CR>
 
-au Filetype perl map <F9> :SyntasticToggleMode<CR>:wa<CR>:!prove -I ../common/lib -I local/lib/perl5 -rlv %<CR>:!read<CR>:SyntasticToggleMode<CR>
-nnoremap <F10> :wa<CR>:!prove -rl t/<CR>
+au Filetype perl nmap <F9> :SyntasticToggleMode<CR>:wa<CR>:!prove -I ../common/lib -I local/lib/perl5 -rlv %<CR>:!read<CR>:SyntasticToggleMode<CR>
+map <F10> :wa<CR>:!prove -rl t/<CR>
 
 "=======================================   /RUN AND TEST
 
