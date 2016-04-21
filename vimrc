@@ -70,8 +70,9 @@ Plugin 'tpope/vim-repeat.git'
 
 Plugin 'tpope/vim-surround.git'
 
-Plugin 'sukima/xmledit.git'
-let g:xmledit_enable_html=1
+" disable in favour of emmet
+"Plugin 'sukima/xmledit.git'
+"let g:xmledit_enable_html=1
 
 Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
