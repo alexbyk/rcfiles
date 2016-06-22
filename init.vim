@@ -1,6 +1,6 @@
 set backupcopy=yes            " for webpack to reload without pain
 filetype off                  " required ?
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/vundle-plugins/Vundle.vim
 call vundle#begin('~/vundle-plugins')
 Plugin 'VundleVim/Vundle.vim'
 
@@ -91,9 +91,8 @@ set path+=$PWD/**,
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 set backupdir=/tmp
-highlight LineNr ctermfg=darkgrey
 set nu
-set colorcolumn=80
+"set colorcolumn=80
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -126,8 +125,7 @@ au Filetype perl vmap <F2> :Tidy<CR>
 " perlcritic
 au Filetype perl nmap <F3> :!perlcritic %<CR>
 
-syntax enable
+"syntax enable
 
 set background=dark
 colorscheme gruvbox
-set clipboard+=unnamedplus
