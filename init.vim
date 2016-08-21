@@ -5,7 +5,9 @@ call vundle#begin('~/vundle-plugins')
 Plugin 'VundleVim/Vundle.vim'
 
 " -------- plugins
-"Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go'
+let g:go_term_mode="below split"
+
 Plugin 'morhetz/gruvbox'
 
 Plugin 'vim-perl/vim-perl'
@@ -41,7 +43,7 @@ let g:syntastic_cpp_compiler = 'clang++'
 let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.22.0/lib/5.22.0/x86_64-linux/CORE"
 let g:syntastic_typescript_tsc_args = '--emitDecoratorMetadata --experimentalDecorators --target=es5 --module=commonjs'
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 nmap <F3> :SyntasticCheck<CR>
 
 Plugin 'pangloss/vim-javascript'
