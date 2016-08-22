@@ -75,6 +75,7 @@ Plugin 'alexbyk/vim-ultisnips-perl'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_show_diagnostics_ui = 0 " for syntastic
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 " to close annoying scratch by C-x C-o
 "autocmd CompleteDone * pclose
 " -------- /plugins
@@ -107,7 +108,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "=======================================   RUN AND TEST
 au Filetype c nmap <F7> :wa<CR>:!make<CR>
-au FileType go nmap <F7> <Plug>(go-run)
+au FileType go nmap <F9> :wa<CR><Plug>(go-run)
+au FileType go nmap <F7> :wa<CR>:!go run %<CR>
 au Filetype cpp nmap <F7> :wa<CR>:!make<CR>
 au Filetype javascript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!node --harmony %; SyntasticToggleMode<CR>
 au Filetype typescript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --module commonjs --target ES6 --experimentalDecorators --emitDecoratorMetadata % && node --harmony %:r; read <CR>:SyntasticToggleMode<CR>
