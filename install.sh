@@ -5,12 +5,12 @@ SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 echo "##############"
 echo "perl stuff"
 echo "##############"
-cpanm Perl::Tidy Perl::Critic Dist::Zilla
+cpanm Perl::Tidy Perl::Critic
 
 echo "##############"
 echo "install npm modules"
 echo "##############"
-npm -g install typescript tslint typescript-formatter npm-check-updates typings
+npm -g install yarn typescript tslint typescript-formatter npm-check-updates typings
 
 echo "##############"
 echo "creating symbolic links in home directory"
