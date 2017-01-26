@@ -5,6 +5,8 @@ call vundle#begin('~/vundle-plugins')
 Plugin 'VundleVim/Vundle.vim'
 
 " -------- plugins
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
 Plugin 'fatih/vim-go'
 let g:go_term_mode="below split"
 
