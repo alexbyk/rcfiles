@@ -2,6 +2,7 @@ set backupcopy=yes            " for webpack to reload without pain
 filetype off                  " required ?
 set rtp+=~/vundle-plugins/Vundle.vim
 call vundle#begin('~/vundle-plugins')
+
 Plugin 'VundleVim/Vundle.vim'
 
 " -------- plugins
@@ -136,3 +137,4 @@ au Filetype perl nmap <F3> :!perlcritic %<CR>
 
 set background=dark
 colorscheme gruvbox
+:set mouse=a
