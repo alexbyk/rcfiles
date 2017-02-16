@@ -120,7 +120,7 @@ au Filetype typescript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!tsc --module c
 au Filetype java nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r; read<CR>:SyntasticToggleMode<CR>
 au Filetype perl nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %<CR>:SyntasticToggleMode<CR>
 
-au Filetype perl nmap <F9> :SyntasticToggleMode<CR>:wa<CR>:!prove -I ../common/lib -I local/lib/perl5 -rlv %<CR>:!read<CR>:SyntasticToggleMode<CR>
+au Filetype perl nmap <F9> :SyntasticToggleMode<CR>:wa<CR>:!./test.sh -v %<CR>:SyntasticToggleMode<CR>
 map <F10> :wa<CR>:!prove -rl t/<CR>
 
 "=======================================   /RUN AND TEST
