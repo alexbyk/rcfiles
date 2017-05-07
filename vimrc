@@ -112,7 +112,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "=======================================   RUN AND TEST
 au Filetype c nmap <F7> :wa<CR>:!make<CR>
-au FileType go nmap <F9> :wa<CR><Plug>(go-run)
+au FileType go nmap <F9> <Plug>(go-run)
 au FileType go nmap <F7> :wa<CR>:!go run %<CR>
 au Filetype cpp nmap <F7> :wa<CR>:!make<CR>
 au Filetype javascript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!node --harmony %; SyntasticToggleMode<CR>
