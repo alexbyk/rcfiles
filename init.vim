@@ -48,7 +48,7 @@ let g:syntastic_c_compiler_options = '-std=gnu11 -Wall -Wextra -pedantic'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
 let g:syntastic_cpp_compiler = 'clang++'
-let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.22.0/lib/5.22.0/x86_64-linux/CORE"
+let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/CORE"
 let g:syntastic_typescript_tsc_args = '--emitDecoratorMetadata --experimentalDecorators --target=es5 --module=commonjs'
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -86,6 +86,9 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 " to close annoying scratch by C-x C-o
 "autocmd CompleteDone * pclose
+
+Plugin 'hail2u/vim-css3-syntax'
+
 " -------- /plugins
 
 call vundle#end()            " required
