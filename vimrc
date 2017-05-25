@@ -1,8 +1,7 @@
-set nocompatible              " be iMproved, required
 set backupcopy=yes            " for webpack to reload without pain
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+filetype off                  " required ?
+set rtp+=~/vundle-plugins/Vundle.vim
+call vundle#begin('~/vundle-plugins')
 
 Plugin 'VundleVim/Vundle.vim'
 
@@ -17,6 +16,11 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-perl/vim-perl'
 let perl_sub_signatures = 1 " signatures
 
+" typescript, requires:
+" cd ~/vundle-plugins/vimproc.vim && make
+Plugin 'Quramy/tsuquyomi'
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'leafgarland/typescript-vim'
 let g:typescript_indent_disable = 1
 
@@ -44,7 +48,7 @@ let g:syntastic_c_compiler_options = '-std=gnu11 -Wall -Wextra -pedantic'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
 let g:syntastic_cpp_compiler = 'clang++'
-let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.22.0/lib/5.22.0/x86_64-linux/CORE"
+let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/CORE"
 let g:syntastic_typescript_tsc_args = '--emitDecoratorMetadata --experimentalDecorators --target=es5 --module=commonjs'
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -82,6 +86,9 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 " to close annoying scratch by C-x C-o
 "autocmd CompleteDone * pclose
+
+Plugin 'hail2u/vim-css3-syntax'
+
 " -------- /plugins
 
 call vundle#end()            " required
@@ -112,7 +119,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "=======================================   RUN AND TEST
 au Filetype c nmap <F7> :wa<CR>:!make<CR>
-au FileType go nmap <F9> <Plug>(go-run)
+au FileType go nmap <F9> :wa<CR><Plug>(go-run)
 au FileType go nmap <F7> :wa<CR>:!go run %<CR>
 au Filetype cpp nmap <F7> :wa<CR>:!make<CR>
 au Filetype javascript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!node --harmony %; SyntasticToggleMode<CR>
