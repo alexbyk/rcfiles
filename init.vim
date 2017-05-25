@@ -1,4 +1,5 @@
 set backupcopy=yes            " for webpack to reload without pain
+set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 filetype off                  " required ?
 set rtp+=~/vundle-plugins/Vundle.vim
 call vundle#begin('~/vundle-plugins')
