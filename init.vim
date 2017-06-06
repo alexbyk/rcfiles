@@ -7,6 +7,11 @@ call vundle#begin('~/vundle-plugins')
 Plugin 'VundleVim/Vundle.vim'
 
 " -------- plugins
+Plugin 'jiangmiao/auto-pairs'   " () '' {}
+Plugin 'majutsushi/tagbar'      " definitions/tag tree
+map <C-l> :TagbarToggle<CR>
+Plugin 'othree/html5.vim'       " HTML5 syntax
+
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'fatih/vim-go'
@@ -37,7 +42,7 @@ let g:formatdef_perltidy = '"perltidy"'
 let g:formatters_perl = ['perltidy']
 noremap <F2> :Autoformat<CR>
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 nnoremap <F5> :CtrlPBuffer<CR>
 
 Plugin 'scrooloose/syntastic'
@@ -63,8 +68,8 @@ Plugin 'scrooloose/nerdtree.git'
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=2
 
-Plugin 'taglist.vim'
-map <C-l> :TlistToggle<CR>
+"Plugin 'taglist.vim' " in favour of majutsushi/tagbar
+"map <C-l> :TlistToggle<CR>
 
 Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'

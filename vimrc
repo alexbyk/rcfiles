@@ -7,6 +7,11 @@ call vundle#begin('~/vundle-plugins')
 Plugin 'VundleVim/Vundle.vim'
 
 " -------- plugins
+Plugin 'jiangmiao/auto-pairs'   " () '' {}
+Plugin 'majutsushi/tagbar'      " definitions/tag tree
+map <C-l> :TagbarToggle<CR>
+Plugin 'othree/html5.vim'       " HTML5 syntax
+
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'fatih/vim-go'
