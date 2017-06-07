@@ -15,6 +15,8 @@ Plugin 'othree/html5.vim'       " HTML5 syntax
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
 
 Plugin 'morhetz/gruvbox'
 

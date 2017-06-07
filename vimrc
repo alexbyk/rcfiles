@@ -16,6 +16,7 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'fatih/vim-go'
 let g:go_term_mode="below split"
+let g:go_auto_type_info = 1
 
 Plugin 'morhetz/gruvbox'
 
