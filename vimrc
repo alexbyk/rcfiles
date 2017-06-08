@@ -96,6 +96,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 Plugin 'hail2u/vim-css3-syntax'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " -------- /plugins
 
 call vundle#end()            " required
