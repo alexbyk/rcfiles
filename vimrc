@@ -15,7 +15,7 @@ Plugin 'othree/html5.vim'       " HTML5 syntax
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'fatih/vim-go'
-let g:go_term_mode="below split"
+let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 
 Plugin 'morhetz/gruvbox'
@@ -43,7 +43,7 @@ let g:formatdef_perltidy = '"perltidy"'
 let g:formatters_perl = ['perltidy']
 noremap <F2> :Autoformat<CR>
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 nnoremap <F5> :CtrlPBuffer<CR>
 
 Plugin 'scrooloose/syntastic'
@@ -69,8 +69,8 @@ Plugin 'scrooloose/nerdtree.git'
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=2
 
-Plugin 'taglist.vim'
-map <C-l> :TlistToggle<CR>
+"Plugin 'taglist.vim' " in favour of majutsushi/tagbar
+"map <C-l> :TlistToggle<CR>
 
 Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
@@ -84,7 +84,7 @@ Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
 Plugin 'honza/vim-snippets.git'
 Plugin 'alexbyk/vim-ultisnips-js-testing'
-"Plugin 'alexbyk/vim-ultisnips-react'
+"Plugin 'alexbyk/vim-ultisnips-react' " don't use React anymore
 Plugin 'alexbyk/vim-ultisnips-perl'
 
 Plugin 'Valloric/YouCompleteMe'
@@ -102,8 +102,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " ------------- /VUNDLE
 
-" (.h)eaders are C, not C++
-au BufRead,BufNewFile   *.h set filetype=c
+au BufRead,BufNewFile   *.h set filetype=c " (.h)eaders are C, not C++
 au BufRead,BufNewFile   *.t set filetype=perl
 
 
@@ -148,36 +147,28 @@ au Filetype perl vmap <F2> :Tidy<CR>
 " perlcritic
 au Filetype perl nmap <F3> :!perlcritic %<CR>
 
-" gui
-if has("gui_running")
-  set go=m
-  syntax enable
-  set background=dark
-  colorscheme gruvbox
-else
-  " fix C_O delay
-  set ttimeoutlen=100
+
+if has('mouse')
+  set mouse=a
 endif
 
+"https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
+if v:progname =~? "nvim"
+  set termguicolors
+endif
+set background=dark
+colorscheme gruvbox
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
+if v:progname =~? "evim" || v:progname =~? "nvim"
   finish
 endif
 
+" other stuff from default vimrc
+" ----------------------------------------------------------------------------------------
 
+""dont remember why but with neovim this causes glitches, so after v:progname check
+"syntax enable
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-if has("vms")
-  set nobackup    " do not keep a backup file, use versions instead
-else
-  set backup    " keep a backup file
-endif
 set history=50    " keep 50 lines of command line history
 set ruler   " show the cursor position all the time
 set showcmd   " display incomplete commands
@@ -192,11 +183,6 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -246,8 +232,3 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
         \ | wincmd p | diffthis
 endif
-
-
-
-
-
