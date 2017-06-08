@@ -67,7 +67,7 @@ Plugin 'mattn/emmet-vim.git'
 
 Plugin 'scrooloose/nerdtree.git'
 map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeMouseMode=2
+let g:NERDTreeMouseMode=2         "open folder: 1 click, open file: 2 clicks
 
 "Plugin 'taglist.vim' " in favour of majutsushi/tagbar
 "map <C-l> :TlistToggle<CR>
