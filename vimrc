@@ -16,7 +16,10 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
-let g:go_auto_type_info = 1
+"let g:go_auto_type_info = 1 "show info for functions
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>b :wa<CR><Plug>(go-build)
+autocmd FileType go nmap <leader>r :wa<CR><Plug>(go-run)
 
 Plugin 'morhetz/gruvbox'
 
@@ -137,7 +140,7 @@ au Filetype java nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r;
 au Filetype perl nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!perl -Ilib %<CR>:SyntasticToggleMode<CR>
 
 au Filetype perl nmap <F9> :SyntasticToggleMode<CR>:wa<CR>:!./test.sh -v %<CR>:SyntasticToggleMode<CR>
-map <F10> :wa<CR>:!prove -rl t/<CR>
+au Filetype perl nmap <F10> :wa<CR>:!prove -rl t/<CR>
 
 "=======================================   /RUN AND TEST
 
