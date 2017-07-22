@@ -1,21 +1,24 @@
 set backupcopy=yes            " for webpack to reload without pain
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 filetype off                  " required ?
-set rtp+=~/vundle-plugins/Vundle.vim
-call vundle#begin('~/vundle-plugins')
 
-Plugin 'VundleVim/Vundle.vim'
+" to install:
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+call plug#begin('~/vim-plugins')
+
+Plug 'VundleVim/Vundle.vim'
 
 " -------- plugins
-Plugin 'jiangmiao/auto-pairs'   " () '' {}
-Plugin 'majutsushi/tagbar'      " definitions/tag tree
+Plug 'jiangmiao/auto-pairs'   " () '' {}
+Plug 'majutsushi/tagbar'      " definitions/tag tree
 map <C-l> :TagbarToggle<CR>
-Plugin 'othree/html5.vim'       " HTML5 syntax
+Plug 'othree/html5.vim'       " HTML5 syntax
 
-Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 "------------- GO
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
 "let g:go_auto_type_info = 1 "show info for functions
 
@@ -26,27 +29,27 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 "------------- /GO
 
-Plugin 'AndrewRadev/splitjoin.vim' " split/join struct, html
+Plug 'AndrewRadev/splitjoin.vim' " split/join struct, html
 
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
-Plugin 'vim-perl/vim-perl'
+Plug 'vim-perl/vim-perl'
 let perl_sub_signatures = 1 " signatures
 
 " typescript, requires:
 " cd ~/vundle-plugins/vimproc.vim && make
-Plugin 'Quramy/tsuquyomi'
+Plug 'Quramy/tsuquyomi'
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 
-Plugin 'Quramy/vim-js-pretty-template'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'leafgarland/typescript-vim'
 let g:typescript_indent_disable = 1
 
 
 " npm install -g js-beautify for js
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 let g:formatdef_my_clang_format = '"clang-format"'
 let g:formatters_c = ['my_clang_format']
 let g:formatters_java = ['my_clang_format']
@@ -56,10 +59,10 @@ let g:formatdef_perltidy = '"perltidy"'
 let g:formatters_perl = ['perltidy']
 noremap <F2> :Autoformat<CR>
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 nnoremap <F5> :CtrlPBuffer<CR>
 
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_mode_map = { "mode": "active",  "active_filetypes": [],  "passive_filetypes": ["html"] }
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_c_check_header = 1
@@ -74,48 +77,47 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 nmap <F3> :SyntasticCheck<CR>
 
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
-Plugin 'mattn/emmet-vim.git'
+Plug 'mattn/emmet-vim'
 
-Plugin 'scrooloose/nerdtree.git'
+Plug 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=2         "open folder: 1 click, open file: 2 clicks
 
-"Plugin 'taglist.vim' " in favour of majutsushi/tagbar
+"Plug 'taglist.vim' " in favour of majutsushi/tagbar
 "map <C-l> :TlistToggle<CR>
 
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'tpope/vim-fugitive.git'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tpope/vim-fugitive'
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-Plugin 'tpope/vim-repeat.git'
-Plugin 'tpope/vim-surround.git'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<C-J>" " avoid conflicts with YCM
-Plugin 'honza/vim-snippets.git'
-Plugin 'alexbyk/vim-ultisnips-js-testing'
-"Plugin 'alexbyk/vim-ultisnips-react' " don't use React anymore
-Plugin 'alexbyk/vim-ultisnips-perl'
+Plug 'honza/vim-snippets'
+Plug 'alexbyk/vim-ultisnips-js-testing'
+"Plug 'alexbyk/vim-ultisnips-react' " don't use React anymore
+Plug 'alexbyk/vim-ultisnips-perl'
 
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 let g:ycm_show_diagnostics_ui = 0 " for syntastic
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 " to close annoying scratch by C-x C-o
 "autocmd CompleteDone * pclose
 
-Plugin 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " -------- /plugins
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()            " required
 " ------------- /VUNDLE
 
 au BufRead,BufNewFile   *.h set filetype=c " (.h)eaders are C, not C++
