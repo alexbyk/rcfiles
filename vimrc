@@ -14,6 +14,7 @@ Plugin 'othree/html5.vim'       " HTML5 syntax
 
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
+"------------- GO
 Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
 "let g:go_auto_type_info = 1 "show info for functions
@@ -22,6 +23,10 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>b :wa<CR><Plug>(go-build)
 autocmd FileType go nmap <leader>r :wa<CR><Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+"------------- /GO
+
+Plugin 'AndrewRadev/splitjoin.vim' " split/join struct, html
 
 Plugin 'morhetz/gruvbox'
 
