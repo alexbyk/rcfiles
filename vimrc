@@ -36,6 +36,9 @@ let perl_sub_signatures = 1 " signatures
 " typescript, requires:
 " cd ~/vundle-plugins/vimproc.vim && make
 Plugin 'Quramy/tsuquyomi'
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'leafgarland/typescript-vim'
