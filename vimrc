@@ -176,8 +176,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 au FileType typescript nmap <leader>r :w<CR>:!node_modules/.bin/ts-node %<CR>
 
 au Filetype c nmap <F7> :wa<CR>:!make<CR>
-au FileType go nmap <F9> :wa<CR><Plug>(go-run)
-au FileType go nmap <F7> :wa<CR>:!go run %<CR>
 au Filetype cpp nmap <F7> :wa<CR>:!make<CR>
 au Filetype javascript nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!node --harmony %; SyntasticToggleMode<CR>
 au Filetype java nmap <F7> :SyntasticToggleMode<CR>:wa<CR>:!javac % && java %:r; read<CR>:SyntasticToggleMode<CR>
