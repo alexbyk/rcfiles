@@ -71,7 +71,8 @@ let g:syntastic_c_compiler_options = '-std=gnu11 -Wall -Wextra -pedantic'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
 let g:syntastic_cpp_compiler = 'clang++'
-let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/CORE"
+" this is for checking XS modules. Will mess with VimPlug(YCM) and other stuff
+" let $CPATH = $HOME . "/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/CORE"
 let g:syntastic_typescript_tsc_args = '--emitDecoratorMetadata --experimentalDecorators --target=es5 --module=commonjs'
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
