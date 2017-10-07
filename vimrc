@@ -7,8 +7,6 @@ filetype off                  " required ?
 
 call plug#begin('~/vim-plugins')
 
-Plug 'VundleVim/Vundle.vim'
-
 " -------- plugins
 Plug 'jiangmiao/auto-pairs'   " () '' {}
 Plug 'majutsushi/tagbar'      " definitions/tag tree
@@ -31,7 +29,7 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 Plug 'AndrewRadev/splitjoin.vim' " split/join struct, html
 
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'  "colorscheme 
 
 Plug 'vim-perl/vim-perl'
 let perl_sub_signatures = 1 " signatures
